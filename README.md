@@ -13,8 +13,8 @@ Homework#3
 |BenchmarkMethods.synchronizedCounterThreads2|   thrpt|   20|  15132415,069 ±  673780,367  ops/s|
 |BenchmarkMethods.synchronizedCounterThreads4|   thrpt|   20|  16238785,300 ±  251517,716  ops/s|
 |BenchmarkMethods.synchronizedCounterThreads8|   thrpt|   20|  16407292,921 ±   90502,719  ops/s|
-|BenchmarkMethods.atomicCounterThreads16|         avgt|   20|        ≈ 10⁻⁶|                 s/op|
-|BenchmarkMethods.atomicCounterThreads2|          avgt|   20|        ≈ 10⁻⁷|                 s/op|
+|BenchmarkMethods.atomicCounterThreads16|         avgt|   20|        ≈ 10⁻⁶                 s/op|
+|BenchmarkMethods.atomicCounterThreads2|          avgt|   20|        ≈ 10⁻⁷                 s/op|
 |BenchmarkMethods.atomicCounterThreads4|          avgt|   20|        ≈ 10⁻⁷                 s/op|
 |BenchmarkMethods.atomicCounterThreads8|          avgt|   20|        ≈ 10⁻⁷                 s/op|
 |BenchmarkMethods.synchronizedCounterThreads16|   avgt|   20|        ≈ 10⁻⁶                 s/op|
