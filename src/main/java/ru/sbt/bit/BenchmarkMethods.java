@@ -16,6 +16,35 @@ public class BenchmarkMethods {
         syncCounter = new SyncCounter();
         concurrentCounter = new ConcurrentCounter();
     }
+    @Benchmark
+    @OutputTimeUnit(TimeUnit.MICROSECONDS)
+    @Threads(1)
+    public int synchronizedCounterThreads1() {
+        return syncCounter.getCurrentNumber();
+    }
+
+    @Benchmark
+    @OutputTimeUnit(TimeUnit.MICROSECONDS)
+    @Threads(1)
+    public int atomicCounterThreads1() {
+        return concurrentCounter.getCurrentNumber();
+    }
+
+
+    @Benchmark
+    @OutputTimeUnit(TimeUnit.MICROSECONDS)
+    @Threads(2)
+    public int synchronizedCounterThreads2() {
+        return syncCounter.getCurrentNumber();
+    }
+
+    @Benchmark
+    @OutputTimeUnit(TimeUnit.MICROSECONDS)
+    @Threads(2)
+    public int atomicCounterThreads2() {
+        return concurrentCounter.getCurrentNumber();
+    }
+
 
     @Benchmark
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
@@ -42,6 +71,20 @@ public class BenchmarkMethods {
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     @Threads(8)
     public int atomicCounterThreads8() {
+        return concurrentCounter.getCurrentNumber();
+    }
+
+    @Benchmark
+    @OutputTimeUnit(TimeUnit.MICROSECONDS)
+    @Threads(16)
+    public int synchronizedCounterThreads16() {
+        return syncCounter.getCurrentNumber();
+    }
+
+    @Benchmark
+    @OutputTimeUnit(TimeUnit.MICROSECONDS)
+    @Threads(16)
+    public int atomicCounterThreads16() {
         return concurrentCounter.getCurrentNumber();
     }
 
