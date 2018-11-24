@@ -2,7 +2,7 @@ package ru.sbt.bit;
 
 import org.openjdk.jmh.annotations.*;
 import ru.sbt.bit.counter.ConcurrentCounter;
-import ru.sbt.bit.counter.FromInternetCounter;
+import ru.sbt.bit.counter.SemaphoreCounter;
 import ru.sbt.bit.counter.SyncCounter;
 
 import java.util.concurrent.TimeUnit;
@@ -11,13 +11,13 @@ import java.util.concurrent.TimeUnit;
 public class BenchmarkMethods {
     private SyncCounter syncCounter;
     private ConcurrentCounter concurrentCounter;
-    private FromInternetCounter fromInternetCounter;
+    private SemaphoreCounter semaphoreCounter;
 
     @Setup
     public void setup(){
         syncCounter = new SyncCounter();
         concurrentCounter = new ConcurrentCounter();
-        fromInternetCounter = new FromInternetCounter();
+        semaphoreCounter = new SemaphoreCounter();
     }
     @Benchmark
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
@@ -36,8 +36,8 @@ public class BenchmarkMethods {
     @Benchmark
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     @Threads(1)
-    public int fromInternetCounterThreads1() {
-        return fromInternetCounter.getCurrentNumber();
+    public int semaphoreCounterThreads1() {
+        return semaphoreCounter.getCurrentNumber();
     }
 
 
@@ -58,8 +58,8 @@ public class BenchmarkMethods {
     @Benchmark
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     @Threads(2)
-    public int fromInternetCounterThreads2() {
-        return fromInternetCounter.getCurrentNumber();
+    public int semaphoreCounterThreads2() {
+        return semaphoreCounter.getCurrentNumber();
     }
 
 
@@ -80,8 +80,8 @@ public class BenchmarkMethods {
     @Benchmark
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     @Threads(4)
-    public int fromInternetCounterThreads4() {
-        return fromInternetCounter.getCurrentNumber();
+    public int semaphoreCounterThreads4() {
+        return semaphoreCounter.getCurrentNumber();
     }
 
     @Benchmark
@@ -101,8 +101,8 @@ public class BenchmarkMethods {
     @Benchmark
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     @Threads(8)
-    public int fromInternetCounterThreads8() {
-        return fromInternetCounter.getCurrentNumber();
+    public int semaphoreCounterThreads8() {
+        return semaphoreCounter.getCurrentNumber();
     }
 
     @Benchmark
@@ -122,8 +122,8 @@ public class BenchmarkMethods {
     @Benchmark
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     @Threads(16)
-    public int fromInternetCounterThreads16() {
-        return fromInternetCounter.getCurrentNumber();
+    public int semaphoreCounterThreads16() {
+        return semaphoreCounter.getCurrentNumber();
     }
 
 }

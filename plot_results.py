@@ -10,7 +10,7 @@ def plot_benchmark_results():
     for name in df['Benchmark'].unique():
         plt.plot(df[df.Benchmark == name]['Threads'], df[df.Benchmark == name]['Score'], label=name)
     plt.legend()
-    plt.savefig('benchmark.png')
+    plt.savefig('img/benchmark.png')
     plt.close()
     
 plot_benchmark_results()
