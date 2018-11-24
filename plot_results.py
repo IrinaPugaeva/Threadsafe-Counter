@@ -6,6 +6,7 @@ plt.switch_backend('agg')
 def plot_benchmark_results():
     df = pd.read_csv('benchmark_result.csv')
     df['Benchmark'] = df['Benchmark'].apply(lambda x: x.split('.')[4][:x.split('.')[4].find('Counter')])
+    df['Score'] = df['Score'].apply(lambda x : float(x.replace(',', '.')) * 1000.0 / 1000.0)
     df = df.sort_values(by=['Threads'])
     plt.ylabel(df['Unit'].unique()[0])
     plt.xlabel('ThreadCount')
