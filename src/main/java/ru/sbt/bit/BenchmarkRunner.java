@@ -17,8 +17,8 @@ public class BenchmarkRunner {
                 .result("benchmark_result.csv")
                 .mode(Mode.Throughput)
                 .forks(1)
-                .warmupIterations(5)
-                .measurementIterations(5)
+                .warmupIterations(15)
+                .measurementIterations(25)
                 .build();
         new Runner(options).run();
     }
