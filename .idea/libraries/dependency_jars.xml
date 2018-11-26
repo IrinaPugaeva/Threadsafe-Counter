@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="dependency-jars">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/dependency-jars/jopt-simple-4.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/dependency-jars/jmh-generator-annprocess-1.19.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/dependency-jars/commons-math3-3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/dependency-jars/jmh-core-1.19.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
