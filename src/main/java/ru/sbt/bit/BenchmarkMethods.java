@@ -109,7 +109,7 @@ public class BenchmarkMethods {
     public int reentrantLockCounterThreads4() {
         return reentrantLockCounter.getCurrentNumber();
     }
-/*
+    
     @Benchmark
     @OutputTimeUnit(TimeUnit.MICROSECONDS)
     @Threads(8)
@@ -137,6 +137,6 @@ public class BenchmarkMethods {
     @Threads(8)
     public int reentrantLockCounterThreads8() {
         return reentrantLockCounter.getCurrentNumber();
-    }*/
+    }
 
 }
